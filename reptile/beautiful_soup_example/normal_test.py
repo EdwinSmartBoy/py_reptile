@@ -113,5 +113,6 @@ def select4():
         print(li.getText())
         print(li.get_text())
 
+
 if __name__ == '__main__':
     select4()
