@@ -23,7 +23,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
-from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support import expected_conditions as EC
 
 
 # selenium的基本使用
@@ -35,7 +35,7 @@ def driver():
         input.send_keys('Python')
         input.send_keys(Keys.ENTER)
         wait = WebDriverWait(browser, 10)
-        wait.until(ec.presence_of_element_located((By.ID, 'content_left')))
+        wait.until(EC.presence_of_element_located((By.ID, 'content_left')))
         print(browser.current_url)
         print(browser.get_cookies())
         print(browser.page_source)
@@ -245,9 +245,9 @@ def web_until_wait():
     # 1.设置显示等待的时间
     wait = WebDriverWait(10)
     # 2.设置显示等待的条件
-    input = wait.until(ec.presence_of_element_located((By.ID, 'q')))
+    input = wait.until(EC.presence_of_element_located((By.ID, 'q')))
     # 显示等待条件
-    button = wait.until(ec.element_to_be_clickable((By.CSS_SELECTOR, '.btn-search')))
+    button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.btn-search')))
     print(input, button)
 
 
